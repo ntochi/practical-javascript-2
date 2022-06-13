@@ -36,22 +36,22 @@ Version 7
 [] The toggleAll button should run the toggleAll function
 
 Version 6
-[] It should have a function for toggling all todos
-[] If everything is true, change everything to false
-[] If everything is false, change everything to true
-[] If mixed, change everything to true
+[x] It should have a function for toggling all todos
+[x] If everything is true, change everything to false
+[x] If everything is false, change everything to true
+[x] If mixed, change everything to true
 
 Version 5
-[] It should have a function to display todos
-[] displayTodos should show the text & completed properties
+[x] It should have a function to display todos
+[x] displayTodos should show the text & completed properties
 
 Version 4
-[] It should have a function to toggle a todo
+[x] It should have a function to toggle a todo
 
 Version 3
-[] We should initialize the todo variable with objects
-[] The add function should add objects
-[] The edit fuction should edit objects
+[x] We should initialize the todo variable with objects
+[x] The add function should add objects
+[x] The edit fuction should edit objects
 
 Version 2
 [x] It should have a function to add a todo

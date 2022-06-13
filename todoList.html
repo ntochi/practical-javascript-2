@@ -11,32 +11,78 @@
   
   <script>
     // Store todos
-    var todos = ['Item 1', 'Item 2', 'Item 3'];
-
-    // Display todos
-    console.log(todos);
+    var todos = [
+      {todoText: 'Item 1', completed: false},
+      {todoText: 'Item 2', completed: false},
+      {todoText: 'Item 3', completed: false}
+    ];
 
     // Add todos
-    function add(todo) {
-      todos.push(todo);
-      console.log(todos)
+    function add(initialTodoText) {
+      var todo = {todoText: initialTodoText, completed: false};
+      todos.push(todo)
+
+      displayTodos()
     }
-    // add('Add new item');
 
     // Edit todos
-    function edit(position, newValue) {
-      todos[position] = newValue;
-      console.log(todos)
+    function edit(position, newTodoText) {
+      todos[position].todoText = newTodoText;
+      
+      displayTodos()
     }
-    // edit(3, 'Item 4');
 
     // Delete todos 
     function remove(position) {
       todos.splice(position, 1);
-      console.log(todos)
-    }
-    // remove(0);
 
+      displayTodos()
+    }
+
+    // Toggle todos
+    function toggle(position) {
+      if (todos[position].completed === false) {
+        todos[position].completed = true;
+      } else {
+        todos[position].completed = false;
+      }
+
+      displayTodos()
+    }
+
+    // Toggle all todos
+    function toggleAll() {
+      var completedTodos = 0
+
+      // Check if everything is true
+      for (let i = 0; i < todos.length; i++) {
+        if (todos[i].completed === true) {
+          completedTodos++
+        }
+      }
+
+      // If everything is true, change everything to false
+      if (completedTodos === todos.length) {
+        for (let i = 0; i < todos.length; i++) {
+          todos[i].completed = false;
+        }
+      } else {
+        // If everything is false, change everything to true
+        // If mixed, change everything to true
+        for (let i = 0; i < todos.length; i++) {
+          todos[i].completed = true;
+        }
+      }
+
+      displayTodos()
+    }
+
+    // Display todos
+    function displayTodos() {
+      for (let i = 0; i < todos.length; i++) {
+        console.log(todos[i])
+      }
+    }
 
 
 
